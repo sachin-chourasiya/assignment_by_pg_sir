@@ -6,13 +6,13 @@ const userInput = readline.createInterface({
   output: process.stdout,
 });
 
-userInput.question("Enter Sku Id ", function (answer) {
-  const words = answer.split('=');
-  let num = parseInt(words[1]);
+userInput.question("Enter Sku Id ", function (inputByUser) {
+  const divideInput = inputByUser.split('=');
+  let num = parseInt(divideInput[1]);
   for(let i=0;i<data.length;i++){
     if(data[i].sku == num){
       console.log(true);
-      data[i].sku = Math.floor(Math.random()*100)
+      data[i].sku = Math.floor(Math.random()*100);
       console.log(data[i]);
       break;
     }
